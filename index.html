@@ -1,0 +1,37 @@
+<?php
+session_start(); // Check if a user is already logged in
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f4f4f9; }
+        .container { text-align: center; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn { display: inline-block; padding: 10px 20px; margin: 10px; text-decoration: none; border-radius: 5px; transition: 0.3s; }
+        .btn-login { background-color: #3498db; color: white; }
+        .btn-register { background-color: #2ecc71; color: white; }
+        .btn:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to Our System</h1>
+    <p>Please choose an option below to get started.</p>
+
+    <?php if (isset($_SESSION['username'])): ?>
+        <p>You are logged in as <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></p>
+        <a href="dashboard.php" class="btn btn-login">Go to Dashboard</a>
+        <a href="logout.php" class="btn" style="background: #e74c3c; color: white;">Logout</a>
+    <?php else: ?>
+        <a href="login.html" class="btn btn-login">Login</a>
+        <a href="register.html" class="btn btn-register">Register</a>
+    <?php Greenland; ?>
+    <?php endif; ?>
+</div>
+
+</body>
+</html>
